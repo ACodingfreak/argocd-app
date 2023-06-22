@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: nginxdeployment
-  replicas: 4
+  replicas: 2
   template:
     metadata:
       labels:
@@ -15,5 +15,6 @@ spec:
       containers:
       - name: nginxdeployment
         image: nginx:latest
+        imagePullPolicy: IfNotPresent # other options include: Always and Never
         ports:
         - containerPort: 80
